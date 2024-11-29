@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <!-- icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+  <!-- css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">SEA OF <span>FTARS</span></a>
+
+    <div class="navbar-nav">
+      <a href="index.html">Home</a>
+      <a href="character.html">Character</a>
+      <a href="fanArt.html">Fan Art</a>
+      <a href="form.html" class="login">Login</a>
+    </div>
+    <div class="navbar-icon">
+      <a href="#" id="menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+  <div class="holePage">
+    <div class="container">
+      <header>Register</header>
+      <form action="form.html">
+        <div class="field userField">
+          <div class="inputField">
+            <input type="text" placeholder="Username" class="username" />
+          </div>
+          <span class="error userError">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="errorText">Username must have min. 5 characters</p>
+          </span>
+        </div>
+        <div class="field countryField">
+          <div class="inputFields">
+            <select name="country" id="country">
+              <option value="">Country</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="China">China</option>
+              <option value="Amerika">Amerika</option>
+              <option value="Korea">Korea</option>
+              <option value="Japan">Japan</option>
+              <option value="Netherland">Netherland</option>
+              <option value="Singapore">Singapore</option>
+              <option value="India">India</option>
+            </select>
+          </div>
+            
+          <span class="error countryError">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="errorText">You must select one country</p>
+          </span>
+        </div>
+        <div class="field emailField">
+          <div class="inputField">
+            <input type="text" placeholder="Email" class="email" />
+          </div>
+          <span class="error emailError">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="errorText">Please enter a valid email</p>
+          </span>
+        </div>
+        <div class="field passField">
+          <div class="inputField">
+            <input type="password" placeholder="Password" class="password" />
+            <i class="bx bx-hide show-hide"></i>
+          </div>
+          <span class="error passwordError">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="errorText">
+              Please enter atleast 8 characters with number, symbol, small and
+              capital letter.
+            </p>
+          </span>
+        </div>
+        <input type="checkbox" class="checkAgree"> I agree with terms and conditions
+        <br>
+        <span class="notChecked">
+          <i class="bx bx-error-circle error-icon"></i>
+          <p class="errorText">You must agree term and condtions</p>
+        </span>
+        <div class="inputField button">
+          <br>
+          <input type="submit" value="Register" />
+        </div>
+        <br><br>
+        <span>Already Have Account? <a href="form.html">Login Here</a></span>
+      </form>
+    </div>
+  </div>
+  <section class="footer">
+    <br><br>
+    Sea of Ftars
+    <br><br>
+    <i data-feather="facebook"></i>
+    <i data-feather="twitter"></i>
+    <i data-feather="instagram"></i>
+    <i data-feather="youtube"></i>
+    <br><br>
+    <span>2023 efteStudio. All Rights Reserved</span>
+  </section>
+  <!-- JavaScript -->
+  <script src="regist.js"></script>
+</body>
+
+</html>

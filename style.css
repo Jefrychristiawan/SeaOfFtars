@@ -1,0 +1,683 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    /* background-color: black; */
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 5%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-family: 'Lobster', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.navbar .navbar-logo span {
+    color: yellow;
+    font-family: 'Lobster', sans-serif;
+}
+
+.navbar .navbar-nav a {
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 15px;
+}
+
+.navbar .navbar-nav a:hover {
+    color: #ece97a;
+    border-bottom: 2px solid #ece97a;
+    /* display: block; */
+    /* transition: 0.2s linear; */
+}
+
+/* .navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    border-bottom: 2px solid #ece97a;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+} */
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar .navbar-nav .login {
+    background-color: #ece97a;
+    color: black;
+    border-radius: 30px;
+    padding: 10px 30px;
+}
+
+.navbar .navbar-nav .login:hover {
+    color: black;
+}
+
+.navbar .navbar-icon {
+
+    display: none;
+}
+
+.navbar .navbar-icon a {
+    color: white;
+}
+
+/* #menu{
+    
+    display: none;
+} */
+@media (max-width: 758px) {
+    .navbar .navbar-icon {
+        display: inline-block;
+    }
+
+    /* #menu{
+        display: inline-block;
+    } */
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: white;
+        width: 20rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav a {
+        color: black;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 30px;
+    }
+}
+
+.main {
+    min-height: 120vh;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    background-image: url('img/background1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    position: relative;
+    justify-content: center;
+}
+
+.main .content {
+
+    text-align: center;
+}
+
+.main .content .logo {
+    font-family: 'Lobster', sans-serif;
+    font-size: 100px;
+    color: white;
+}
+
+.main .content .logo span {
+    color: yellow;
+    font-family: 'Lobster', sans-serif;
+}
+
+.main .content a {
+    border-radius: 300px;
+    padding: 20px 60px;
+    background-color: yellow;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    outline-style: solid;
+    outline-color: yellow;
+}
+
+.trailer {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url('img/wood.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    justify-content: center;
+}
+
+.trailer .videoTitle {
+    text-align: center;
+    font-family: 'Lobster', sans-serif;
+    font-size: 100px;
+    color: white;
+    flex-basis: 100%;
+}
+@media (max-width: 758px){
+    .trailer .videoTitle {
+        font-size: 50px;
+    }
+}
+.trailer .video {
+    flex-basis: 45%;
+    float: left;
+}
+
+.trailer .video video {
+    width: 560px;
+    height: 315px;
+    display: block;
+}
+@media (max-width: 758px){
+    .trailer .video video {
+        width: 300px;
+        height: 200px;
+        display: block;
+    }
+}
+
+.trailer .description {
+    margin-top: 6%;
+    flex-basis: 38%;
+    line-height: 1.5;
+    font-size: 20px;
+    text-align: justify;
+    float: right;
+}
+
+@media screen and (max-width: 1000px) {
+    .trailer .video {
+        width: 100%;
+    }
+
+    .trailer .description {
+        flex-basis: 100%;
+        width: 100%;
+        margin: 20px;
+        background-color: white;
+    }
+}
+
+.features {
+    min-height: 100vh;
+    /* display: flex; */
+    background-image: url('img/sky.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    justify-content: center;
+}
+
+.features .featureTitle {
+    text-align: center;
+    font-family: 'Lobster', sans-serif;
+    font-size: 100px;
+    color: yellow;
+    flex-basis: 100%;
+}
+@media (max-width: 758px){
+    .features .featureTitle {
+        text-align: center;
+        font-family: 'Lobster', sans-serif;
+        font-size: 50px;
+        color: yellow;
+        flex-basis: 100%;
+    }
+}
+
+.features .photo {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.pic {
+    position: relative;
+    height: 270px;
+    border-radius: 5px;
+    background: black;
+    /* box-shadow: 0px 4px 5px 5px rgba(230, 4, 4, 0.2); */
+}
+
+.pic img {
+    width: 100%;
+    height: 80%;
+    background: black;
+}
+
+.pic p {
+    /* background-color: white; */
+    text-align: center;
+    color: yellow;
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.place {
+    min-height: 80vh;
+    /* display: flex; */
+    background-image: url('img/background3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    justify-content: center;
+}
+
+.place .placeTitle {
+    text-align: center;
+    font-family: 'Lobster', sans-serif;
+    font-size: 50px;
+    color: white;
+    flex-basis: 100%;
+}
+
+/* .place .placeTitle h1{
+    margin-top: 30px;
+} */
+.place .photo {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 50px;
+    margin-top: 20px;
+    /* background-image: transparent; */
+}
+
+.pics {
+    /* position: relative; */
+
+    border-radius: 10px;
+}
+
+.pics img {
+    width: 100%;
+    display: block;
+    height: 270px;
+    border-radius: 20px;
+}
+
+.footer {
+    min-height: 30vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+.footer span {
+    color: grey;
+}
+
+.heroOrEnemy {
+    min-height: 120vh;
+    margin-top: 80px;
+
+    background-image: url('img/background1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    position: relative;
+    color: #fff
+}
+
+.heroOrEnemy .heroBtn {
+    margin-left: 40px;
+    border: 2px solid transparent;
+    background-color: yellow;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.heroOrEnemy .enemyBtn {
+    margin-left: -10px;
+    border: 2px solid transparent;
+    /* background-color: #fff; */
+    border-color: yellow;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: yellow;
+}
+
+.heroOrEnemy .heroCharacter {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 20px;
+}
+
+.heroPic {
+    position: relative;
+    height: 230px;
+    border-radius: 5px;
+    /* background: black; */
+    background-image: url('img/cardback.jpg');
+}
+
+.heroPic img {
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    width: 90%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.heroPic p {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.heroOrEnemy .heroBtn1 {
+    margin-left: 40px;
+    border: 2px solid transparent;
+    border-color: yellow;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: yellow;
+}
+
+.heroOrEnemy .enemyBtn1 {
+    margin-left: -10px;
+    border: 2px solid transparent;
+    /* background-color: #fff; */
+    background-color: yellow;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: black;
+
+}
+
+.fanArt {
+    min-height: 250vh;
+    margin-top: 80px;
+    background-image: url('img/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    position: relative;
+}
+
+.fanArt h1 {
+    text-align: center;
+    color: yellow;
+    font-size: 50px;
+}
+
+.fanArt .top3 {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 20px;
+}
+
+.artPic {
+    position: relative;
+    height: 270px;
+    border-radius: 5px;
+    background: black;
+    /* background-image: url('img/cardback.jpg'); */
+}
+
+.artPic img {
+    padding-bottom: 7px;
+    width: 100%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.artPic p {
+    color: yellow;
+    text-align: center;
+    font-weight: bold;
+}
+
+.artPic p span {
+    color: white;
+}
+
+.fanArt .shareArt {
+    text-align: center;
+    color: white;
+}
+
+.fanArt a {
+    color: white;
+    text-decoration: underline;
+}
+
+.nagatoCharacter {
+    min-height: 120vh;
+    margin-top: 80px;
+
+    background-image: url('img/background1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    position: relative;
+    color: #fff
+}
+
+.nagatoCharacter .nagatoAnimation {
+    text-align: center;
+}
+
+.nagatoCharacter .nagatoAnimation h1 {
+    color: gray;
+    font-size: 50px;
+}
+
+.nagatoCharacter .nagatoAnimation video {
+    width: 650px;
+
+}
+@media (max-width: 758px){
+    .nagatoCharacter .nagatoAnimation video {
+        width: 300px;
+    
+    }
+}
+.nagatoCharacter .nagatoStory {
+    margin: auto;
+    width: 50%;
+}
+
+.nagatoCharacter .nagatoStory h1 {
+    color: yellow;
+}
+
+.nagatoCharacter .nagatoStory hr {
+    border: 1px solid yellow;
+    
+}
+
+.nagatoCharacter .nagatoStory p {
+    text-align: justify;
+    line-height: 1.75;
+}
+
+.holePage {
+    min-height: 150vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('img/background1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+}
+.holePages{
+    min-height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('img/background1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+}
+.container {
+    position: relative;
+    max-width: 370px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.container header {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.container form {
+    margin-top: 30px;
+}
+
+form .field {
+    margin-bottom: 20px;
+}
+
+form .inputField {
+    position: relative;
+    height: 55px;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.inputField input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    padding: 0 15px;
+    border: 1px solid #d1d1d1;
+}
+.inputFields select{
+    position: relative;
+    height: 55px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0 15px;
+    border: 1px solid #d1d1d1;
+}
+.invalid input {
+    border-color: red;
+}
+.invalid select{
+    border-color: red;
+}
+.inputField .show-hide {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #919191;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.field .error {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    color: red;
+    font-size: 13px;
+    display: none;
+}
+
+.invalid .error {
+    display: flex;
+}
+
+.error .error-icon {
+    margin-right: 6px;
+    font-size: 15px;
+}
+
+.passField .error {
+    align-items: flex-start;
+}
+
+.passField .error-icon {
+    margin-top: 4px;
+}
+
+.button {
+    /* margin: 15px; */
+    width: 100%;
+}
+
+.button input {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: yellow;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.notChecked {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    color: red;
+    font-size: 13px;
+    display: none;
+}
+
+.notValid {
+    display: flex;
+}
